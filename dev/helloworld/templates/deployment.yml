@@ -15,8 +15,8 @@ spec:
       imagePullSecrets:
       - name: {{ .Values.imagePullSecrets }}
       containers:
-      - name: hello-world
+      - name: hell0-world
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        imagePullPolicy: {{ .Values.imagepullPolicy }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
           - containerPort: {{.Values.service.port}}
