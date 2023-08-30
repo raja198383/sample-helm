@@ -13,10 +13,10 @@ spec:
         app: hello-world
     spec:
       imagePullSecrets:
-      - name: imagepull-docker
+      - name: {{ .Values.imagePullSecrets }}
       containers:
       - name: hello-world
-        image: ramakrishna8254/week:v3
-        imagePullPolicy: Always
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
-          - containerPort: 8080
+          - containerPort: {{.Values.service.port}}
