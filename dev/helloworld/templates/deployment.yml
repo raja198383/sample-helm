@@ -1,13 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-deployment
+  name: {{.Values.appname}}
 spec:
-  replicas: 1
-  revisionHistoryLimit: 3
+  replicas: 1  
   selector:
     matchLabels:
-      app: hello-world
+      app: {{.Values.appname}}
   template:
     metadata:
       labels:
