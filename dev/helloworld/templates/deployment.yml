@@ -13,7 +13,7 @@ spec:
         app: hello-world
     spec:
       imagePullSecrets:
-      - name: {{ .Values.imagePullSecrets }}
+      - name: {{ .Values.image.name }}
       containers:
       - name: hell0-world
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
